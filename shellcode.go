@@ -44,12 +44,12 @@
 	//fmt.Println("Digte o Numero de Variantes ")
 	//fmt.Scanf("%d",&number)
 		var variants []string
-	for j := 0; j < 33; i++ {
-		Shellcode1 := shellcode
-		Shellcode2 := shellcode
-		Child := Crossover(Shellcode1, Shellcode2)
-		MutatedChild := Mutation(child)
-		shell_metamorfic = append(shell_metamorfic, MutatedChild)
+	for i := 0; i < 33; i++ {
+		parent1 := shellcode
+		parent2 := shellcode
+		child := Crossover(parent1, parent2)
+		mutatedChild := Mutation(child)
+		variants = append(variants, mutatedChild)
 	}
 	for index, value := range variants {
         fmt.Printf("Indexado: %d, Valor: %s\n", index, value)
