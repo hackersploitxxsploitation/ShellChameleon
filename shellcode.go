@@ -5,7 +5,7 @@
 		"math/rand"
 		"time"
 	)
-	
+	var shell []string
 	func Crossover(shellcode_parent1 string,shellcode_parent2 string)(string){
 	rand.Seed(time.Now().UnixNano())
 	fuction_point_croosver:=rand.Intn(len(shellcode_parent1))
@@ -28,7 +28,7 @@
 	
 	func main(){
 	var    shellcode string
-	var  number int
+	//var  number int
 	
 	fmt.Println("######::'##::::'##:'########:'##:::::::'##:::::: ::'######::'##::::'##::::'###:::'##::::'##:'##### ###:'##:::::::'########::'#######::'##::: ##:")
 	fmt.Println("'##... ##: ##:::: ##: ##.....:: ##::::::: ##:::::::'##.. . ##: ##:::: ##:::'## ##::: ###::'###: ##.....:: ##:::::: : ##.....::'##.... ##: ###:: ##:")
@@ -41,21 +41,17 @@
 	
 	fmt.Println("Digite  o Shellcode :")
 	fmt.Scanf("%s",&shellcode)
-	fmt.Println("Digte o Numero de Variantes ")
-	fmt.Scanf("%d",&number)
-	var shell []string
-	for j:=0;j<39;j++{
-	shellcode_parent1:=shellcode
-	shellcode_parent2:=shellcode
-	Child:=Crossover(shellcode_parent1,shellcode_parent2)
-	Mutate_child:=Mutation(Child)
-	shell:=append(shell,Mutate_child)
-	fmt.Println(shell)
+	//fmt.Println("Digte o Numero de Variantes ")
+	//fmt.Scanf("%d",&number)
+		var variants []string
+	for j := 0; j < 33; i++ {
+		Shellcode1 := shellcode
+		Shellcode2 := shellcode
+		Child := Crossover(Shellcode1, Shellcode2)
+		MutatedChild := Mutation(child)
+		shell_metamorfic = append(shell_metamorfic, MutatedChild)
 	}
-	for i, variant := range shell {
-		fmt.Println(string(variant[i]))
-		
-	}
-	
-	//fmt.Println("%s",shell)
+	for index, value := range variants {
+        fmt.Printf("Indexado: %d, Valor: %s\n", index, value)
+    }
 	}
